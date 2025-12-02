@@ -1,137 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Md Zahidul Islam Laku</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Personal website of Md Zahidul Islam Laku." />
-  <style>
-    .profile-photo {
-      float: right;
-      margin-left: 1.5rem;
-      margin-bottom: 1rem;
-      width: 180px;
-      border-radius: 12px;  /* make corners rounded */
-    }
-  </style>
-  <style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Zahid Laku</title>
+
+<style>
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background: #f5f5f5;
-      color: #222;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #fafafa;
+        color: #222;
+        line-height: 1.6;
     }
-    .wrapper {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem 1rem 3rem;
+
+    /* ─── NAVBAR ───────────────────────────────────────────────────── */
+    .navbar {
+        width: 100%;
+        padding: 15px 25px;
+        background: #ffffff;
+        border-bottom: 1px solid #e6e6e6;
+        display: flex;
+        gap: 22px;
+        font-size: 16px;
+        align-items: center;
     }
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
+    .navbar a {
+        color: #222;
+        text-decoration: none;
+        font-weight: 500;
     }
-    h1 {
-      margin-bottom: 0.25rem;
+    .navbar .dots {
+        margin-left: auto;
+        cursor: pointer;
     }
-    h2 {
-      margin-top: 2rem;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.25rem;
-      font-size: 1.2rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+
+    /* ─── HERO SECTION ─────────────────────────────────────────────── */
+    .hero {
+        display: flex;
+        padding: 40px 5%;
+        gap: 40px;
+        background: #fafafa;
     }
-    a {
-      color: #0366d6;
-      text-decoration: none;
+
+    /* LEFT COLUMN (Picture + Contact + CV) */
+    .left-col {
+        width: 35%;
+        text-align: center;
     }
-    a:hover {
-      text-decoration: underline;
+    .left-col img {
+        width: 100%;
+        border-radius: 10px;
+        border: 1px solid #e0e0e0;
     }
-    ul {
-      padding-left: 1.2rem;
+
+    .contact-box {
+        margin-top: 20px;
+        padding: 12px;
+        background: #ffffff;
+        border: 1px solid #dddddd;
+        border-radius: 8px;
+        text-align: left;
+        font-size: 15px;
     }
-    .tagline {
-      color: #555;
-      font-size: 0.95rem;
+
+    .download-btn {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 16px;
+        background: #1E3A8A; /* Penn State Blue */
+        color: #ffffff;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
     }
-    .links a {
-      margin-right: 1rem;
-      font-size: 0.95rem;
+
+    /* RIGHT COLUMN (Bio / Intro) */
+    .right-col {
+        width: 60%;
+        padding-top: 10px;
     }
-  </style>
+    .right-col h1 {
+        margin-top: 0;
+        font-size: 32px;
+        font-weight: 700;
+    }
+    .subtext {
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: #444444;
+    }
+    .right-col p {
+        font-size: 16px;
+        color: #333;
+    }
+
+    /* ─── UPDATES SECTION ─────────────────────────────────────────── */
+    .updates {
+        margin: 25px 5%;
+        padding: 20px;
+        background: #ffffff;
+        border: 1px solid #dddddd;
+        border-radius: 8px;
+    }
+    .updates h2 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 22px;
+    }
+    .updates ul {
+        margin: 0;
+        padding-left: 20px;
+    }
+
+    /* ─── LOWER LINKS BAR (FOOTER-LIKE) ───────────────────────────── */
+    .lower-links {
+        margin-top: 35px;
+        text-align: center;
+        padding: 20px 0;
+        border-top: 1px solid #e6e6e6;
+        background: #ffffff;
+    }
+    .lower-links a {
+        margin: 0 15px;
+        color: #0056D2;
+        font-weight: 500;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    /* ─── RESPONSIVE (MOBILE) ─────────────────────────────────────── */
+    @media(max-width: 900px) {
+        .hero {
+            flex-direction: column;
+        }
+        .left-col, .right-col {
+            width: 100%;
+        }
+    }
+</style>
 </head>
+
 <body>
-  <div class="wrapper">
-    <header>
-      <img src="Md Zahidul Islam Laku  website profile.png" alt="Md Zahidul Islam Laku" class="profile-photo">
-      <h1>Md Zahidul Islam Laku</h1>
-      <p class="tagline">
-        PhD Student, Energy and Mineral Engineering, Penn State University
-      </p>
-      <p class="links">
-        <a href="https://github.com/zahidlaku" target="_blank">GitHub</a>
-        <a href="https://scholar.google.com/citations?user=zTfXACgAAAAJ&hl=en" target="_blank">Google Scholar</a>
-        <a href="#" target="_blank">CV (PDF)</a>
-        <a href="mailto:your_email@psu.edu">Email</a>
-      </p>
-    </header>
 
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        I am a PhD student in the Department of Energy and Mineral Engineering at
-        Penn State University. My research interests include porous media physics,
-        pore-network modeling, and subsurface energy systems.
-      </p>
-    </section>
+<!-- ─── NAVBAR ───────────────────────────────────────────────────────── -->
+<div class="navbar">
+    <a href="#">Zahid Laku</a>
+    <a href="#">Home</a>
+    <a href="#">Research</a>
+    <a href="#">Current Project</a>
+    <a href="#">MAME</a>
+    <a href="#">Contact</a>
+    <span class="dots">⋮</span>
+</div>
 
-    <section id="research">
-      <h2>Research</h2>
-      <ul>
-        <li>
-          <strong>Ostwald ripening of gas bubbles in porous microstructures</strong><br>
-          Image-based pore network modeling to understand bubble evolution and its impact
-          on fluid transport.
-        </li>
-        <li>
-          <strong>Multiphase flow in porous media</strong><br>
-          Numerical simulation and analysis of two-phase flow and capillarity-driven
-          processes.
-        </li>
-      </ul>
-    </section>
+<!-- ─── HERO SECTION ─────────────────────────────────────────────────── -->
+<div class="hero">
 
-    <section id="projects">
-      <h2>Selected Projects</h2>
-      <ul>
-        <li>
-          <strong>Pore Network Modeling Code</strong> – MATLAB implementation for
-          simulating two-phase flow in complex pore networks.
-        </li>
-        <li>
-          <strong>Mineral Image Classification</strong> – Machine learning models for
-          classifying mineral types from image data.
-        </li>
-      </ul>
-    </section>
+    <!-- LEFT COLUMN -->
+    <div class="left-col">
+        <img src="your-photo.jpg" alt="Zahid Laku Photo" />
 
-    <section id="publications">
-      <h2>Publications & Presentations</h2>
-      <p>
-        Coming soon. <!-- Add your papers / talks here later -->
-      </p>
-    </section>
+        <div class="contact-box">
+            <strong>Email:</strong> your-email@psu.edu <br>
+            <strong>Location:</strong> Penn State University, PA <br>
+        </div>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        Email: <a href="mailto:your_email@psu.edu">mxl6146@psu.edu</a><br>
-        GitHub: <a href="https://github.com/zahidlaku">github.com/zahidlaku</a>
-      </p>
-    </section>
-  </div>
+        <!-- Download CV ONLY here -->
+        <a class="download-btn" href="CV.pdf" download>Download CV ↓</a>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right-col">
+        <h1>Md Zahidul Islam Laku</h1>
+
+        <div class="subtext">
+            Computational Geoscience • Scientific Computing • Pore Network Modeling
+        </div>
+
+        <p>
+            I am a PhD researcher at Penn State working on porous media physics,
+            image-based pore-network modeling, curvature evolution,
+            and multiphase flow in geological systems. My research focuses on
+            understanding bubble dynamics, Ostwald ripening, and the physics of
+            subsurface energy storage.
+        </p>
+    </div>
+
+</div>
+
+<!-- ─── UPDATES SECTION ──────────────────────────────────────────────── -->
+<div class="updates">
+    <h2>Recent Updates</h2>
+    <ul>
+        <li>Dec 2025 – Curvature evolution modeling</li>
+        <li>Nov 2025 – Microfluidics analysis</li>
+        <li>Oct 2025 – Presented poster at AGU</li>
+    </ul>
+</div>
+
+<!-- ─── LOWER BAR WITH ALL PROFESSIONAL LINKS ────────────────────────── -->
+<div class="lower-links">
+    <a href="#">GitHub</a>
+    <a href="#">Google Scholar</a>
+    <a href="#">LinkedIn</a>
+    <a href="#">Twitter/X</a>
+    <a href="#">ResearchGate</a>
+</div>
+
 </body>
 </html>
