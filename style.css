@@ -87,12 +87,11 @@ body {
 
 /* ─── HERO SECTION ───────────────────────────────────── */
 .hero {
-  display: flex;
-  padding: 40px 8%;
-  gap: 40px;
-  background: transparent;
-  max-width: 1100px;
-  margin: 0 auto;
+    display: flex;
+    padding: 40px 8%;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .left-col {
