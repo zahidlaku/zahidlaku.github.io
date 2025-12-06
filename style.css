@@ -24,7 +24,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: #111827;            /* same dark as hero-band */
+  background: #111827;            /* dark bar */
   border-bottom: 1px solid #1f2937;
   padding: 12px 8%;
 }
@@ -40,7 +40,7 @@ body {
 .brand a {
   font-weight: 700;
   font-size: 20px;
-  color: #f9f5eb;
+  color: #f9f5eb;                 /* light text */
   text-decoration: none;
   letter-spacing: 0.03em;
 }
@@ -53,7 +53,7 @@ body {
 }
 
 .nav-links a {
-  color: #f9f5eb;
+  color: #f9f5eb;                 /* light links */
   text-decoration: none;
   font-weight: 500;
   position: relative;
