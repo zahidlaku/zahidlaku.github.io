@@ -51,6 +51,50 @@ body {
   font-size: 15px;
   align-items: center;
 }
+/* three-dots menu */
+.nav-more {
+  position: relative;
+}
+
+.more-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;      /* size of the dots */
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  color: #f9f5eb;         /* same as other nav text */
+}
+
+.more-menu {
+  position: absolute;
+  right: 0;
+  top: 150%;
+  background: #020617;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  padding: 0.4rem 0;
+  min-width: 170px;
+  display: none;          /* hidden by default */
+  z-index: 200;
+}
+
+.more-menu a {
+  display: block;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.9rem;
+  color: #e5e7eb;
+  text-decoration: none;
+}
+
+.more-menu a:hover {
+  background: #111827;
+}
+
+/* show dropdown when nav-more has .open */
+.nav-more.open .more-menu {
+  display: block;
+}
 
 .nav-links a {
   color: #f9f5eb;                 /* light links */
