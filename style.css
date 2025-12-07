@@ -180,6 +180,7 @@ body {
 .right-col {
   width: 60%;
   padding-top: 10px;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 .right-col h1 {
@@ -190,13 +191,15 @@ body {
 }
 
 .subtext {
-  font-size: 18px;
-  margin-bottom: 15px;
-  color: #e5e7eb;
+  font-size: 18px;          
+  font-weight: 500;         
+  margin-bottom: 12px;
+  color: #d1d5db;
 }
 
 .right-col p {
-  font-size: 16px;
+  font-size: 16px;          /* bigger than before */
+  line-height: 1.8;         /* comfy to read */
   color: #e5e7eb;
 }
 
