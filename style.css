@@ -25,7 +25,7 @@ body {
   top: 0;
   z-index: 100;
   background: #111827;
-  border-bottom: 3px solid #334155;  /* thicker + lighter so it pops */
+  border-bottom: 3px solid #1f2937;
   padding: 12px 8%;
 }
 
