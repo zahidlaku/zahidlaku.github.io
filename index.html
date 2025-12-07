@@ -6,6 +6,24 @@
   <title>Zahid Laku</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+  
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const more = document.querySelector('.nav-more');
+    if (!more) return;
+
+    const btn = more.querySelector('.more-btn');
+
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      more.classList.toggle('open');
+    });
+
+    document.addEventListener('click', function () {
+      more.classList.remove('open');
+    });
+  });
+</script>
 
 <body>
 
