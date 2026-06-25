@@ -7,21 +7,18 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-  
+
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const more = document.querySelector('.nav-more');
     if (!more) return;
-
     const btn = more.querySelector('.more-btn');
-
     btn.addEventListener('click', function (e) {
       e.stopPropagation();
       more.classList.toggle('open');
     });
-
     document.addEventListener('click', function () {
       more.classList.remove('open');
     });
@@ -36,7 +33,6 @@
       <div class="brand">
         <a href="#home">Zahid Laku</a>
       </div>
-
       <nav class="nav-links">
         <a href="index.html" class="active">Home</a>
         <a href="#updates">Updates</a>
@@ -44,7 +40,6 @@
         <a href="#current">Current Project</a>
         <a href="#contact">Contact</a>
         <a href="#mame" class="pill">MAME</a>
-        <!-- three-dots menu -->
         <div class="nav-more">
           <button class="more-btn" aria-label="More links">⋯</button>
           <div class="more-menu">
@@ -58,24 +53,19 @@
     </div>
   </header>
 
-  <!-- ─── HERO SECTION (dark band) ─────────────────────────── -->
+  <!-- ─── HERO SECTION ─────────────────────────────────────── -->
   <main>
     <section class="hero-band" id="home">
       <div class="hero">
-        <!-- LEFT COLUMN -->
         <div class="left-col">
           <img src="img/profile.jpg" alt="Zahid Laku Photo" />
           <a class="download-btn" href="CV.pdf" download>CV (PDF) ↓</a>
         </div>
-
-        <!-- RIGHT COLUMN -->
         <div class="right-col">
           <h1>Md Zahidul Islam Laku</h1>
-
           <div class="subtext">
-           • computational sciences • fluid &amp; solid mechanics • porous media physics
+            • computational sciences • fluid &amp; solid mechanics • porous media physics
           </div>
-
           <p>
             I'm a PhD student at Penn State University, majoring in Energy and Mineral Engineering with a minor in Computational Sciences. I work in the Mehmani Research Group on porous media physics, where I study capillary-dominated bubble dynamics in porous microstructures. My research connects to underground hydrogen storage, CO<sub>2</sub> sequestration, and the design of efficient fuel cells and electrolyzers. Outside research, I love to spare my time on music and mathematics, where notes and numbers blur together to form something surreal yet elegantly logical!!
           </p>
@@ -83,59 +73,53 @@
       </div>
     </section>
 
+    <!-- ─── UPDATES ──────────────────────────────────────────── -->
     <section class="updates" id="updates">
-      <h2>Recent Updates</h2>
+      <h2 class="updates-heading">Recent Updates</h2>
 
-      <!-- Update 1 – WWOAP Scholarship -->
-      <div class="update-card">
-        <div class="update-icon blue">💧</div>
-        <div class="update-content">
-          <p class="update-meta">June 2026 · Water Works Operators' Association of Pennsylvania</p>
-          <h3>Awarded the Serena DiMagno Memorial Scholarship (WWOAP)</h3>
-          <p>
-            I was selected to receive the Serena DiMagno Memorial Scholarship from the
-            Water Works Operators' Association of Pennsylvania (WWOAP), recognizing
-            academic excellence and contributions to the water and environmental engineering field.
-          </p>
+      <!-- Card 1: WWOAP Scholarship -->
+      <div class="ucard">
+        <div class="ucard-left">
+          <div class="ucard-icon blue">💧</div>
+        </div>
+        <div class="ucard-body">
+          <p class="ucard-meta">June 2026 &middot; Water Works Operators' Association of Pennsylvania</p>
+          <h3 class="ucard-title">Awarded the Serena DiMagno Memorial Scholarship (WWOAP)</h3>
+          <p class="ucard-desc">I was selected to receive the Serena DiMagno Memorial Scholarship from the Water Works Operators' Association of Pennsylvania (WWOAP), recognizing academic excellence and contributions to the water and environmental engineering field.</p>
         </div>
       </div>
 
-      <!-- Update 2 – AGU Fall Meeting -->
-      <div class="update-card">
-        <img src="img/AGU25_Image.jpg" alt="Presenting my poster at AGU 2025" />
-        <div class="update-content">
-          <p class="update-meta">Dec 2025 · AGU Fall Meeting, New Orleans</p>
-          <h3>Presented poster on Ostwald ripening in porous media</h3>
-          <p>
-            I presented a poster at
-            <a href="https://www.agu.org/annual-meeting" target="_blank" rel="noopener">AGU 2025</a>
-            on curvature-driven evolution of trapped bubble populations in porous microstructures,
-            combining microfluidic experiments with an image-based pore-network model.
-          </p>
+      <!-- Card 2: AGU Fall Meeting -->
+      <div class="ucard">
+        <div class="ucard-left">
+          <div class="ucard-photo-wrap">
+            <img class="ucard-photo" src="img/AGU25_Image.jpg" alt="Presenting at AGU 2025" />
+          </div>
+        </div>
+        <div class="ucard-body">
+          <p class="ucard-meta">Dec 2025 &middot; AGU Fall Meeting, New Orleans</p>
+          <h3 class="ucard-title">Presented poster on Ostwald ripening in porous media</h3>
+          <p class="ucard-desc">I presented a poster at <a href="https://www.agu.org/annual-meeting" target="_blank" rel="noopener">AGU 2025</a> on curvature-driven evolution of trapped bubble populations in porous microstructures, combining microfluidic experiments with an image-based pore-network model.</p>
         </div>
       </div>
 
-      <!-- Update 3 – EME Outstanding GTA Award -->
-      <div class="update-card">
-        <div class="update-icon gold">🏆</div>
-        <div class="update-content">
-          <p class="update-meta">2025 · Pennsylvania State University</p>
-          <h3>Received EME Outstanding Graduate Teaching Assistant Award</h3>
-          <p>
-            I was honored with the Outstanding Graduate Teaching Assistant Award by the
-            Department of Energy and Mineral Engineering at Penn State, recognizing my
-            contributions to teaching in Reservoir Modeling (PNG 430) and Special Topics (PNG 497).
-          </p>
+      <!-- Card 3: EME GTA Award -->
+      <div class="ucard ucard-last">
+        <div class="ucard-left">
+          <div class="ucard-icon gold">🏆</div>
+        </div>
+        <div class="ucard-body">
+          <p class="ucard-meta">2025 &middot; Pennsylvania State University</p>
+          <h3 class="ucard-title">Received EME Outstanding Graduate Teaching Assistant Award</h3>
+          <p class="ucard-desc">I was honored with the Outstanding Graduate Teaching Assistant Award by the Department of Energy and Mineral Engineering at Penn State, recognizing my contributions to teaching in Reservoir Modeling (PNG 430) and Special Topics (PNG 497).</p>
         </div>
       </div>
 
-      <p class="updates-more">
-        <a href="updates.html">Older updates →</a>
-      </p>
+      <p class="updates-more"><a href="updates.html">Older updates →</a></p>
     </section>
   </main>
 
-  <!-- ─── LOWER BAR WITH PROFESSIONAL LINKS ────────────────── -->
+  <!-- ─── FOOTER ───────────────────────────────────────────── -->
   <footer class="lower-links">
     <a href="https://github.com/zahidlaku" target="_blank">GitHub</a>
     <a href="https://scholar.google.com/..." target="_blank">Google Scholar</a>
