@@ -86,20 +86,20 @@
     const greeting = "Hi, I'm Zahid. ";
     const rest     = "I'm a PhD student at Penn State University, majoring in Energy and Mineral Engineering with a minor in Computational Sciences. I work in the Mehmani Research Group on porous media physics, where I study capillary-dominated bubble dynamics in porous microstructures. My research connects to underground hydrogen storage, CO\u2082 sequestration, and the design of efficient fuel cells and electrolyzers. Outside research, I love to spare my time on music and mathematics, where notes and numbers blur together to form something surreal yet elegantly logical!!";
 
-    const SPEED      = 28;   /* ms per character — smooth, consistent */
-    const JITTER     = 6;    /* ±ms natural variation                  */
+    const SPEED      = 35;   /* ms per character — smooth, consistent */
+    const JITTER     = 35;   /* ±ms natural variation                  */
     const START_WAIT = 800;  /* ms pause before first character        */
 
     const para   = document.querySelector('.typewriter-wrap p');
     const cursor = document.querySelector('.tw-cursor');
     if (!para || !cursor) return;
 
-    /* Build DOM structure once */
+    /* Build DOM structure — both nodes inserted BEFORE the cursor */
     const greetSpan = document.createElement('span');
     greetSpan.className = 'tw-greeting';
-    para.appendChild(greetSpan);
+    para.insertBefore(greetSpan, cursor);
     const bodyNode = document.createTextNode('');
-    para.appendChild(bodyNode);
+    para.insertBefore(bodyNode, cursor);
 
     const fullText = greeting + rest;
     let i = 0;
@@ -167,7 +167,7 @@
 
           <!-- Typewriter block -->
           <div class="typewriter-wrap">
-            <p></p><span class="tw-cursor" aria-hidden="true"></span>
+            <p><span class="tw-cursor" aria-hidden="true"></span></p>
           </div>
 
         </div>
