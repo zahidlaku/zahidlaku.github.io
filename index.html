@@ -8,20 +8,118 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Typewriter container ── */
+    .typewriter-wrap {
+      min-height: 10em;
+      position: relative;
+    }
+
+    .typewriter-wrap p {
+      margin: 0;
+      line-height: 1.8;
+      font-size: 0.97rem;
+      letter-spacing: 0.01em;
+      color: inherit;
+    }
+
+    /* Greeting highlight */
+    .tw-greeting {
+      color: #7b9cff;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    /* Cursor — slim, rounded, accent blue */
+    .tw-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 0.95em;
+      background: #7b9cff;
+      margin-left: 1.5px;
+      vertical-align: text-bottom;
+      border-radius: 2px;
+      animation: tw-blink 1.1s ease-in-out infinite;
+    }
+
+    @keyframes tw-blink {
+      0%, 45%  { opacity: 1; }
+      55%, 100%{ opacity: 0; }
+    }
+
+    /* Gentle fade-up on load */
+    .typewriter-wrap {
+      opacity: 0;
+      transform: translateY(8px);
+      animation: tw-appear 0.7s ease 0.3s forwards;
+    }
+
+    @keyframes tw-appear {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .typewriter-wrap { animation: none; opacity: 1; transform: none; }
+      .tw-cursor       { animation: none; opacity: 1; }
+    }
+  </style>
 </head>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+
+    /* ── nav-more dropdown ── */
     const more = document.querySelector('.nav-more');
-    if (!more) return;
-    const btn = more.querySelector('.more-btn');
-    btn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      more.classList.toggle('open');
-    });
-    document.addEventListener('click', function () {
-      more.classList.remove('open');
-    });
+    if (more) {
+      const btn = more.querySelector('.more-btn');
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        more.classList.toggle('open');
+      });
+      document.addEventListener('click', function () {
+        more.classList.remove('open');
+      });
+    }
+
+    /* ── Typewriter ── */
+    const greeting = "Hi, I'm Zahid. ";
+    const rest     = "I'm a PhD student at Penn State University, majoring in Energy and Mineral Engineering with a minor in Computational Sciences. I work in the Mehmani Research Group on porous media physics, where I study capillary-dominated bubble dynamics in porous microstructures. My research connects to underground hydrogen storage, CO\u2082 sequestration, and the design of efficient fuel cells and electrolyzers. Outside research, I love to spare my time on music and mathematics, where notes and numbers blur together to form something surreal yet elegantly logical!!";
+
+    const SPEED      = 28;   /* ms per character — smooth, consistent */
+    const JITTER     = 6;    /* ±ms natural variation                  */
+    const START_WAIT = 800;  /* ms pause before first character        */
+
+    const para   = document.querySelector('.typewriter-wrap p');
+    const cursor = document.querySelector('.tw-cursor');
+    if (!para || !cursor) return;
+
+    /* Build DOM structure once */
+    const greetSpan = document.createElement('span');
+    greetSpan.className = 'tw-greeting';
+    para.appendChild(greetSpan);
+    const bodyNode = document.createTextNode('');
+    para.appendChild(bodyNode);
+
+    const fullText = greeting + rest;
+    let i = 0;
+
+    function tick() {
+      if (i >= fullText.length) return; /* done — cursor keeps blinking */
+
+      const ch = fullText[i];
+      if (i < greeting.length) {
+        greetSpan.textContent += ch;
+      } else {
+        bodyNode.textContent += ch;
+      }
+      i++;
+
+      const wait = SPEED + (Math.random() * JITTER * 2 - JITTER);
+      setTimeout(tick, wait);
+    }
+
+    setTimeout(tick, START_WAIT);
   });
 </script>
 
@@ -66,9 +164,12 @@
           <div class="subtext">
             • computational sciences • fluid &amp; solid mechanics • porous media physics
           </div>
-          <p>
-            I'm a PhD student at Penn State University, majoring in Energy and Mineral Engineering with a minor in Computational Sciences. I work in the Mehmani Research Group on porous media physics, where I study capillary-dominated bubble dynamics in porous microstructures. My research connects to underground hydrogen storage, CO<sub>2</sub> sequestration, and the design of efficient fuel cells and electrolyzers. Outside research, I love to spare my time on music and mathematics, where notes and numbers blur together to form something surreal yet elegantly logical!!
-          </p>
+
+          <!-- Typewriter block -->
+          <div class="typewriter-wrap">
+            <p></p><span class="tw-cursor" aria-hidden="true"></span>
+          </div>
+
         </div>
       </div>
     </section>
@@ -77,7 +178,6 @@
     <section class="updates" id="updates">
       <h2 class="updates-heading">Recent Updates</h2>
 
-      <!-- Card 1: WWOAP Scholarship -->
       <div class="ucard">
         <div class="ucard-left">
           <div class="ucard-icon blue">💧</div>
@@ -89,7 +189,6 @@
         </div>
       </div>
 
-      <!-- Card 2: AGU Fall Meeting -->
       <div class="ucard">
         <div class="ucard-left">
           <div class="ucard-photo-wrap">
@@ -103,7 +202,6 @@
         </div>
       </div>
 
-      <!-- Card 3: EME GTA Award -->
       <div class="ucard ucard-last">
         <div class="ucard-left">
           <div class="ucard-icon gold">🏆</div>
